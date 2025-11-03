@@ -183,7 +183,7 @@ const education = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+      "I thought it was impossible to make a website as beautiful as our product, but athul proved me wrong.",
     name: "Manav Bv",
     designation: "Data analyst",
     company: "Ace",
@@ -191,18 +191,18 @@ const testimonials = [
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Sudhin Devan",
+      "I've never met a web developer who truly cares about their clients' success like athul does.",
+    name: "Deepak ",
     designation: "CEO",
-    company: "Desvu",
+    company: "Stackerbee technologies",
     image: "https://media.licdn.com/dms/image/D5603AQHrfEaIAkgS2Q/profile-displayphoto-shrink_800_800/0/1679645001956?e=2147483647&v=beta&t=VC2s_L58xVp3BfpnCmO-QeZVox5xrnnxeLGw4yeoc4Q",
   },
   {
     testimonial:
       "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
     name: "Rinshid Kp",
-    designation: "CTO",
-    company: "456 Enterprises",
+    designation: "Zonal Manager",
+    company: "Topline services",
     image: "https://media.licdn.com/dms/image/D5603AQG2vFNl7EqBew/profile-displayphoto-shrink_800_800/0/1668671458709?e=2147483647&v=beta&t=c2ZOg519eyWxeRCmGrQoAUEt5xvl0y7-Krfw-Zc0EzY",
   },
 ];
