@@ -26,7 +26,11 @@ import {
   dressCustomizer,
   clearSki,
   chitChat,
+
+
 } from "../assets";
+
+
 
 export const navLinks = [
   {
@@ -205,9 +209,9 @@ const testimonials = [
 
 const projects = [
   {
-    name: "TIME ZEN",
+    name: "Topline Integrated Service",
     description:
-      "Timezen is an E-commerce website meticulously crafted with Python Django as the backbone of server-side operations, while PostgreSQL ensures robust and secure data storage. Our platform offers a seamless and enriching shopping experience, coupled with advanced features to elevate your online watch-buying journey.",
+"Topline Integrated Services is a comprehensive business solutions platform designed to showcase and manage a wide range of corporate services efficiently. The platform features a Next.js frontend optimized for SEO and fast client-side navigation, ensuring high performance and visibility across search engines. The Django backend powers dynamic content management, including service listings, blogs, and contact form submissions",
     tags: [
       {
         name: "Python",
@@ -218,11 +222,11 @@ const projects = [
         color: "green-text-gradient",
       },
       {
-        name: "CSS",
+        name: "Tailwindcss",
         color: "pink-text-gradient",
       },
       {
-        name: "Bootstrap",
+        name: "Nextjs",
         color: "blue-text-gradient",
       },
       {
@@ -230,7 +234,7 @@ const projects = [
         color: "green-text-gradient",
       },
       {
-        name: "AJAX",
+        name: "SEo",
         color: "pink-text-gradient",
       },
       {
@@ -242,7 +246,7 @@ const projects = [
         color: "green-text-gradient",
       },
       {
-        name: "RazorPay",
+        name: "Redis",
         color: "pink-text-gradient",
       },
       
@@ -261,16 +265,14 @@ const projects = [
     ],
     image: trinity,
     source_code_link: "/",
-    live_link: "/",
-    features: [
-      "Email verification",
-      "Cart  for saving preffered iteam",
-      "Wish  for saving preffered iteams",
-      "Wallet",
-      "Refferal Programs",
-      "Secure Razorpay payment gateway Integration",
-      "Razorpay Refund & wallet Refund",
-    ],
+    live_link: "https://toplineservices.in",
+    features:  [
+  "Next.js frontend optimized for SEO performance and fast client-side navigation",
+  "Django backend for managing dynamic content, service listings, and contact form submissions",
+  "Role-based access control with separate admin dashboards for managing services, blogs, and media content",
+  "Responsive and user-friendly design ensuring smooth experience across all devices using Tailwind CSS",
+  "Deployed on AWS EC2 with Nginx for high availability, scalability, and optimized performance"
+],
   },
   {
     name: "Pixel Hub",
