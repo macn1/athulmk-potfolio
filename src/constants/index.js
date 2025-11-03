@@ -234,7 +234,7 @@ const projects = [
         color: "green-text-gradient",
       },
       {
-        name: "SEo",
+        name: "SEO",
         color: "pink-text-gradient",
       },
       {
@@ -341,7 +341,61 @@ const projects = [
       
     ],
   },
-  
+   {
+    name: "Hospitality",
+    description:
+    "AJP Hospitality is a comprehensive hospitality and guest service automation platform built using Django and React.js. The system streamlines hotel operations by integrating modules for room booking, chauffeur service, medical assistance, and food & beverage management, ensuring a seamless workflow between departments. The frontend, developed with React.js and Tailwind CSS, provides a fully responsive and customizable user experience across all devices. Secure online payments are enabled through Razorpay integration, allowing guests to make quick and reliable transactions for bookings and services. On the backend, PostgreSQL ensures robust data storage and optimized query performance. The platform also features role-based access control, offering dedicated dashboards for administrators, staff, and guests to enhance efficiency, data security, and user experience.",
+
+    tags: [
+      {
+        name: "React.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "RTK ",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Tailwind CSS",
+        color: "pink-text-gradient",
+      },
+      
+      
+      {
+        name: "Django",
+        color: "pink-text-gradient",
+      },
+        {
+        name: "Admin Dashboard",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Reactjs",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Docker",
+        color: "pink-text-gradient",
+      },
+      
+      
+      {
+        name: "SMTP",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: chitChat,
+    source_code_link: "/",
+    live_link: "https://hospitality.ajpgroup.com/",
+   features: [
+  "Developed modules for room booking, chauffeur service, medical assistance, and food & beverage management",
+  "Integrated Razorpay payment gateway for secure online transactions",
+  "Implemented role-based dashboards for admin, staff, and guests",
+  "Built a responsive frontend using React.js and Tailwind CSS",
+  "Optimized PostgreSQL database for high performance and reliability"
+],
+
+  },
  
  
   {
@@ -385,40 +439,7 @@ const projects = [
   },
 
 
-  {
-    name: "Quiz Mater",
-    description:
-      "Quiz Master is a web application designed to provide an engaging and interactive quiz-taking experience. It leverages the power of Django and React.js to create a robust and feature-rich platform. Here are some of the key features and functionalities of your project:",
-    tags: [
-      {
-        name: "React.js",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Axios ",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Tailwind CSS",
-        color: "pink-text-gradient",
-      },
-      
-      
-      {
-        name: "API",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: chitChat,
-    source_code_link: "/",
-    live_link: "/",
-    features: [
-      "Used Tailwind CSS for styling",
-      "Email verification",
-      "Mobile responsive",
-      "Each quiz question is equipped with a timer"
-    ],
-  },
+ 
 
 
 
