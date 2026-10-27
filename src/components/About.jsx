@@ -1,65 +1,48 @@
-// tilt used for tilting effect for the cards
-import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
-import { styles } from "../styles";
-import { services } from "../constants";
+import { services, summary } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { fadeIn, textVariant } from "../utils/motion";
+import { fadeIn } from "../utils/motion";
+import Icon from "./Icons";
+import SectionHeading from "./SectionHeading";
 
 const ServiceCard = ({ index, title, icon, description }) => (
-  <Tilt className="xs:w-[250px] w-full">
-    <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
-    >
-      <div
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
-      >
-        <img
-          src={icon}
-          alt={title}
-          className="w-16 h-16 object-contain"
-        />
-
-        <h3 className="text-white text-[20px] font-bold text-center">
-          {title}
-        </h3>
-        <p className="text-center text-[14px] mt-3 text-white">
-          {description}
-        </p>
-      </div>
-    </motion.div>
-  </Tilt>
+  <motion.div
+    variants={fadeIn("up", "spring", index * 0.1, 0.7)}
+    className="glass rounded-2xl p-6 hover:border-accent/50 transition-colors group"
+  >
+    <div className="w-11 h-11 rounded-xl bg-accent/15 text-accent flex items-center justify-center group-hover:bg-accent group-hover:text-primary transition-colors">
+      <Icon name={icon} className="w-5 h-5" />
+    </div>
+    <h3 className="mt-5 font-display text-white text-[17px] font-semibold">{title}</h3>
+    <p className="mt-2 text-secondary text-[14px] leading-[24px]">{description}</p>
+  </motion.div>
 );
 
+const About = () => (
+  <>
+    <SectionHeading index="01" eyebrow="About" title="Building reliable products, end to end." />
 
-const About = () => {
-  return (
-    <>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
-      </motion.div>
+    <div className="mt-10 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10">
+      <div className="space-y-5">
+        {summary.map((paragraph, i) => (
+          <motion.p
+            key={i}
+            variants={fadeIn("", "", 0.1 + i * 0.1, 0.8)}
+            className="text-secondary text-[16px] leading-[30px]"
+          >
+            {paragraph}
+          </motion.p>
+        ))}
+      </div>
 
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px] text-justify"
-      >
-Full-Stack Developer skilled in building scalable web applications using Python, Django, and React. Proven ability to enhance application efficiency through backend optimization and user experience improvements. Proficient in cloud services (AWS) and modern development tools (Docker, Nginx), with hands-on experience integrating complex systems to streamline operations. Strong problem-solving mindset with a focus on delivering impactful solutions in collaborative environments      </motion.p>
-
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
-    </>
-  );
-};
+    </div>
+  </>
+);
 
 export default SectionWrapper(About, "about");

@@ -1,102 +1,126 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
-import { navLinks } from "../constants";
-import { logo, menu, close } from "../assets";
+import { navLinks, profile } from "../constants";
+import Icon from "./Icons";
 
 const Navbar = () => {
-  // state for active link
   const [active, setActive] = useState("");
-  // state to toggle the small box in mobile devices
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      if (scrollTop > 100) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+    navLinks.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
   }, []);
 
   return (
     <nav
-      className={`${
-        styles.paddingX
-      } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "bg-primary" : "bg-transparent"
+      className={`${styles.paddingX} w-full fixed top-0 z-30 transition-all duration-300 ${
+        scrolled
+          ? "py-3 bg-primary/80 backdrop-blur-xl border-b border-line"
+          : "py-5 bg-transparent"
       }`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-        <Link
-          to="/"
-          className="flex items-center gap-2"
-          onClick={() => {
-            setActive("");
-            window.scrollTo(0, 0);
-          }}
+        <a
+          href="#top"
+          className="flex items-center gap-3"
+          onClick={() => setActive("")}
+          aria-label="Back to top"
         >
-          <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex ">
-            ATHUL M K &nbsp;
-            <span className="sm:block hidden"> | DEVELOPER</span>
-          </p>
-        </Link>
+          <span className="w-9 h-9 rounded-lg glass flex items-center justify-center font-display font-bold text-[14px] text-white">
+            AM
+          </span>
+          <span className="font-display font-semibold text-white text-[16px] tracking-tight sm:block hidden">
+            Athul M K
+          </span>
+        </a>
 
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <ul className="list-none hidden lg:flex items-center gap-8">
           {navLinks.map((nav) => (
-            <li
-              key={nav.id}
-              className={`${
-                active === nav.title ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
-              onClick={() => setActive(nav.title)}
-            >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+            <li key={nav.id}>
+              <a
+                href={`#${nav.id}`}
+                className={`text-[14px] font-medium transition-colors hover:text-white ${
+                  active === nav.id ? "text-white" : "text-secondary"
+                }`}
+              >
+                {nav.title}
+              </a>
             </li>
           ))}
         </ul>
 
-        <div className="sm:hidden flex flex-1 justify-end items-center">
-          <img
-            src={toggle ? close : menu}
-            alt="menu"
-            className="w-[28px] h-[28px] object-contain"
-            onClick={() => setToggle(!toggle)}
-          />
-
-          <div
-            className={`${
-              !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+        <div className="flex items-center gap-3">
+          <a
+            href={profile.resume}
+            download
+            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg text-[13px] font-medium text-white glass hover:border-accent/60 transition-colors"
           >
-            <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
-              {navLinks.map((nav) => (
-                <li
-                  key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? "text-white" : "text-secondary"
-                  }`}
-                  onClick={() => {
-                    setToggle(!toggle);
-                    setActive(nav.title);
-                  }}
-                >
-                  <a href={`#${nav.id}`}>{nav.title}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <Icon name="download" className="w-4 h-4" />
+            Resume
+          </a>
+
+          <button
+            type="button"
+            className="lg:hidden w-10 h-10 rounded-lg glass flex items-center justify-center text-white"
+            onClick={() => setToggle(!toggle)}
+            aria-label="Toggle menu"
+            aria-expanded={toggle}
+          >
+            <Icon name={toggle ? "close" : "menu"} className="w-5 h-5" />
+          </button>
         </div>
       </div>
+
+      {toggle && (
+        <div className="lg:hidden max-w-7xl mx-auto mt-3 glass rounded-xl p-5 bg-primary/95">
+          <ul className="list-none flex flex-col gap-4">
+            {navLinks.map((nav) => (
+              <li key={nav.id}>
+                <a
+                  href={`#${nav.id}`}
+                  onClick={() => setToggle(false)}
+                  className={`text-[16px] font-medium ${
+                    active === nav.id ? "text-white" : "text-secondary"
+                  }`}
+                >
+                  {nav.title}
+                </a>
+              </li>
+            ))}
+            <li>
+              <a
+                href={profile.resume}
+                download
+                className="inline-flex items-center gap-2 text-[16px] font-medium text-accent2"
+              >
+                <Icon name="download" className="w-4 h-4" />
+                Download resume
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };

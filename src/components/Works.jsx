@@ -1,115 +1,83 @@
-import {Tilt} from "react-tilt";
 import { motion } from "framer-motion";
 
-import { styles } from "../styles";
-import { github } from "../assets";
-import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
-import { fadeIn, textVariant } from "../utils/motion";
+import { SectionWrapper } from "../hoc";
+import { fadeIn } from "../utils/motion";
+import Icon from "./Icons";
+import SectionHeading from "./SectionHeading";
 
-const ProjectCard = ({
-  index,
-  name,
-  description,
-  tags,
-  image,
-  source_code_link,
-  live_link,
-  features
-}) => {
-  return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
+const ProjectCard = ({ index, name, category, year, description, highlights, stack, accent }) => (
+  <motion.article
+    variants={fadeIn("up", "spring", (index % 2) * 0.12, 0.8)}
+    className="glass rounded-2xl overflow-hidden flex flex-col hover:border-accent/50 transition-colors group"
+  >
+    <div
+      className="relative h-40 overflow-hidden"
+      style={{ background: `linear-gradient(135deg, ${accent[0]}, ${accent[1]})` }}
+    >
+      <div className="absolute inset-0 bg-primary/55" />
+      <div
+        className="absolute inset-0 opacity-60"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
         }}
-        className='bg-tertiary p-5 rounded-2xl sm:w-[480px] w-full'
-      >
-        <div className='relative w-full h-[230px] cursor-pointer' onClick={() => window.open(live_link, "_blank")}>
-          <img
-            
-            src={image}
-            alt='project_image'
-            className='w-full h-full object-cover rounded-2xl'
-          />
+      />
+      <span className="absolute -bottom-6 -right-2 font-display font-extrabold text-[120px] leading-none text-white/10 select-none">
+        {name.charAt(0)}
+      </span>
+      <div className="absolute left-6 bottom-5">
+        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/70">
+          {year}
+        </p>
+        <p className="mt-1 text-white text-[14px]">{category}</p>
+      </div>
+    </div>
 
-          <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
-            <div
-              onClick={(e) => {e.stopPropagation(); window.open(source_code_link, "_blank")}}
-              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
-            >
-              <img
-                src={github}
-                alt='source code'
-                className='w-1/2 h-1/2 object-contain'
-              />
-            </div>
-          </div>
-        </div>
+    <div className="p-6 flex flex-col flex-1">
+      <h3 className="font-display text-white text-[22px] font-semibold tracking-tight">
+        {name}
+      </h3>
 
-        <div className='mt-5'>
-          <div className="flex items-center justify-between">
-            <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-            <h3 onClick={() => window.open(live_link, "_blank")} className='px-2 cursor-pointer text-blue-600 underline-offset-2 underline'>Go Live</h3>
-          </div>
-          <p className='mt-2 text-secondary text-[14px]'>{description}</p>
-        </div>
-        <div className="mt-4 font-bold tracking-wider">Features</div>
-        <ul className='mt-5 list-disc ml-5 space-y-2'>
-        {features.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            className='text-white-100 text-[14px] pl-1 tracking-wider'
-          >
+      <p className="mt-3 text-secondary text-[14px] leading-[24px]">{description}</p>
+
+      <ul className="mt-5 mb-6 space-y-2">
+        {highlights.map((point) => (
+          <li key={point} className="flex gap-3 text-white-100/90 text-[13.5px] leading-[22px]">
+            <Icon name="check" className="w-4 h-4 mt-[3px] text-accent2 shrink-0" />
             {point}
           </li>
         ))}
       </ul>
-        <div className='mt-4 flex flex-wrap gap-2'>
-          {tags.map((tag) => (
-            <p
-              key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
-            >
-              #{tag.name}
-            </p>
-          ))}
-        </div>
-      </Tilt>
-    </motion.div>
-  );
-};
 
-const Works = () => {
-  return (
-    <>
-      <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} `}>My work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
-      </motion.div>
-
-      <div className='w-full flex'>
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
-        >
-          Following projects showcases my skills and experience through
-          real-world examples of my work. Each project is briefly described with
-          links to code repositories and live demos in it. It reflects my
-          ability to solve complex problems, work with different technologies,
-          and manage projects effectively.
-        </motion.p>
-      </div>
-
-      <div className='mt-20 flex flex-wrap justify-center gap-14'>
-        {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+      <div className="pt-5 border-t border-line flex flex-wrap gap-2 mt-auto">
+        {stack.map((tech) => (
+          <span
+            key={tech}
+            className="px-2.5 py-1 rounded-md bg-white/[0.05] border border-line text-[12px] text-white-100 font-mono"
+          >
+            {tech}
+          </span>
         ))}
       </div>
-    </>
-  );
-};
+    </div>
+  </motion.article>
+);
 
-export default SectionWrapper(Works, "works");
+const Works = () => (
+  <>
+    <SectionHeading index="04" eyebrow="Projects" title="Selected work.">
+      Products built at Stackerbee Technologies and independent platforms I designed,
+      built and deployed myself.
+    </SectionHeading>
+
+    <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+      {projects.map((project, index) => (
+        <ProjectCard key={project.name} index={index} {...project} />
+      ))}
+    </div>
+  </>
+);
+
+export default SectionWrapper(Works, "projects");

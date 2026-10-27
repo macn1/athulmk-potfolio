@@ -1,462 +1,287 @@
-import {
-  mobile,
-  backend,
-  creator,
-  web,
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  threejs,
-  runInStyle,
-  trinity,
-  netflix,
-  dressCustomizer,
-  clearSki,
-  chitChat,
-
-
-} from "../assets";
-
-
+export const profile = {
+  name: "Athul M K",
+  role: "Python Full Stack Developer",
+  tagline:
+    "I design and ship scalable web platforms: Django and React on the surface, PostgreSQL, AWS and Nginx underneath.",
+  location: "United Arab Emirates",
+  phone: "+971 565867669",
+  email: "athulmkdevcse2022@gmail.com",
+  linkedin: "https://linkedin.com/in/athulmk1",
+  github: "https://github.com/macn1",
+  resume: "/Athulmk-Resume.pdf",
+};
 
 export const navLinks = [
-  {
-    id: "about",
-    title: "About",
-  },
-  {
-    id: "work",
-    title: "Work",
-  },
-  {
-    id: "contact",
-    title: "Contact",
-  },
+  { id: "about", title: "About" },
+  { id: "experience", title: "Experience" },
+  { id: "skills", title: "Skills" },
+  { id: "projects", title: "Projects" },
+  { id: "education", title: "Education" },
+  { id: "contact", title: "Contact" },
 ];
 
-const services = [
+export const stats = [
+  { value: "2+", label: "Years of experience" },
+  { value: "10+", label: "Production apps shipped" },
+  { value: "6+", label: "Industries served" },
+  { value: "AWS", label: "Deployed end to end" },
+];
+
+export const summary = [
+  "Full Stack Developer with 2+ years of experience designing, developing and maintaining scalable web applications using Python, Django and React.",
+  "I work across the whole stack: backend optimization, REST API development, database design and modern frontend engineering. I also run my own deployments on AWS with Docker and Nginx.",
+  "I like integrating complex systems (billing, bookings, real-time chat, role-based dashboards) into products that improve operational efficiency and feel good to use.",
+];
+
+export const services = [
   {
-    title: "Full-Stack Developer",
-    icon: web,
+    title: "Full Stack Engineering",
     description:
-      "Building full-stack applications using Python, Django, FastAPI, and React.",
+      "End-to-end web applications with Django and React, from data model to polished interface.",
+    icon: "layers",
   },
   {
-    title: "Backend Developer",
-    icon: backend,
+    title: "API & Backend",
     description:
-      "Expertise in Python (Django, FastAPI) and Node.js (Express) for creating robust APIs.",
+      "REST APIs with Django REST Framework, JWT auth, role-based access control and optimized PostgreSQL queries.",
+    icon: "server",
   },
   {
-    title: "Frontend Developer",
-    icon: mobile,
+    title: "Modern Frontend",
     description:
-      "Developing dynamic and responsive interfaces with React.js and Next.js.",
+      "Responsive, reusable component architectures with React, Next.js, Tailwind CSS and Material UI.",
+    icon: "layout",
   },
   {
-    title: "DevOps & Cloud Deployment",
-    icon: creator,
+    title: "Cloud & Deployment",
     description:
-      "Managing deployments and cloud infrastructure using AWS, Docker, and Nginx for scalability and reliability.",
+      "Production hosting on AWS EC2 and S3 with Docker and Nginx, including domain and server configuration.",
+    icon: "cloud",
   },
 ];
 
-
-const technologies = [
+export const experiences = [
   {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
-  },
-];
-const experiences = [
-  // {
-  //   title: "Internship",
-  //   company_name: "Brototype",
-  //   icon: starbucks,
-  //   iconBg: "#E6DEDD",
-  //   date: "October 2022 - Present",
-  //   points: [],
-  // },
-  {
-    title: "Python Full Stack Developer",
-    company_name: "Stackerbee Technologies",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2025 - Present",
-    points: [],
-  },
-  {
-    title: "Python Developer (intern)",
-    company_name: "Veda Infosystem",
-    icon: starbucks,
-    iconBg: "#E6DEDD",
-    date: "Feb 2024 - Dec 2024",
-    points: [],
-  },
-];
-
-const education = [
-  // {
-  //   title: "Internship",
-  //   company_name: "Brototype",
-  //   icon: starbucks,
-  //   iconBg: "#E6DEDD",
-  //   date: "October 2022 - Present",
-  //   points: [],
-  // },
-  {
-    title: "Btech In Computer Science",
-    company_name: "APJ Abdul Kalam Technological University",
-    icon: tesla,
-    iconBg: "#E6DEDD",
-    date: "2015 - 2019",
-    points: [],
-  },
-  {
-    title: "Higher-Secondary in Computer Science",
-    company_name: "JNMGHSS",
-    icon: shopify,
-    iconBg: "#E6DEDD",
-    date: "2013 - 2015",
-    points: [],
-  },
-];
-
-const testimonials = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but he proved me wrong.",
-    name: "Manav Bv",
-    designation: "Data analyst",
-    company: "Ace",
-    image: "https://media.licdn.com/dms/image/C5603AQEZ9QFYMX2t3w/profile-displayphoto-shrink_400_400/0/1653404994245?e=1702512000&v=beta&t=6tZCl_Hb0KKlMsWBqjBnPV1-gHbf4P8kB8nr-bgRLKo",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients'",
-    name: "Deepak ",
-    designation: "CEO",
-    company: "Stackerbee technologies",
-    image: "https://media.licdn.com/dms/image/D5603AQHrfEaIAkgS2Q/profile-displayphoto-shrink_800_800/0/1679645001956?e=2147483647&v=beta&t=VC2s_L58xVp3BfpnCmO-QeZVox5xrnnxeLGw4yeoc4Q",
-  },
-  {
-    testimonial:
-      "After beep team optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Rinshid Kp",
-    designation: "Zonal Manager",
-    company: "Topline services",
-    image: "https://media.licdn.com/dms/image/D5603AQG2vFNl7EqBew/profile-displayphoto-shrink_800_800/0/1668671458709?e=2147483647&v=beta&t=c2ZOg519eyWxeRCmGrQoAUEt5xvl0y7-Krfw-Zc0EzY",
-  },
-];
-
-const projects = [
-  {
-    name: "Topline Integrated Service",
-    description:
-"Topline Integrated Services is a comprehensive business solutions platform designed to showcase and manage a wide range of corporate services efficiently. The platform features a Next.js frontend optimized for SEO and fast client-side navigation, ensuring high performance and visibility across search engines. The Django backend powers dynamic content management, including service listings, blogs, and contact form submissions",
-    tags: [
+    company: "Stackerbee Technologies",
+    role: "Python Full Stack Developer",
+    period: "Feb 2025 – Sept 2026",
+    summary:
+      "Built and shipped four full stack products across fitness, hospitality, automotive and logistics, owning features from database design through to production deployment.",
+    projects: [
       {
-        name: "Python",
-        color: "blue-text-gradient",
+        name: "BIOGATE: Gym Management SaaS Platform",
+        stack: ["Django", "React.js", "PostgreSQL", "JWT"],
+        points: [
+          "Developed a multi-tenant architecture supporting white-label deployments",
+          "Implemented membership management, class scheduling and subscription billing",
+          "Designed RESTful APIs with JWT authentication and role-based access control",
+          "Utilized PostgreSQL for efficient data storage and retrieval",
+        ],
       },
       {
-        name: "Django",
-        color: "green-text-gradient",
+        name: "AJP Hospitality: Guest Service Automation Platform",
+        stack: ["Django", "React.js", "Tailwind CSS", "PostgreSQL"],
+        points: [
+          "Implemented modules for room booking, chauffeur service, medical assistance and food & beverage management with seamless workflow integration",
+          "Built a responsive, customizable frontend with React.js and Tailwind CSS",
+          "Used PostgreSQL with optimized queries for reliable storage and high performance",
+          "Designed role-based access control with separate dashboards for admin, staff and guests",
+        ],
       },
       {
-        name: "Tailwindcss",
-        color: "pink-text-gradient",
+        name: "AJP Automotive: Service & Vehicle Management Platform",
+        stack: ["React (Vite)", "Django REST Framework", "PostgreSQL", "Tailwind CSS"],
+        points: [
+          "Developed a full stack platform with React.js (Vite), Django REST Framework and PostgreSQL",
+          "Implemented vehicle listings, service management, customer inquiries and appointment scheduling",
+          "Added authentication and role-based access control for admin and staff management",
+          "Improved performance through reusable React components and optimized API handling",
+          "Managed deployment, domain configuration and production server setup for live hosting",
+        ],
       },
       {
-        name: "Nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "postgres",
-        color: "green-text-gradient",
-      },
-      {
-        name: "SEO",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "java script",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Twilio",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Redis",
-        color: "pink-text-gradient",
-      },
-      
-      {
-        name: "AWS",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "EC2-Instance",
-        color: "green-text-gradient",
-      },
-      {
-        name: "nginx",
-        color: "green-text-gradient",
+        name: "Warehouse Management System (WMS)",
+        stack: ["React.js", "Component architecture"],
+        points: [
+          "Engineered a complete WMS with a component-based architecture that maximizes reusability",
+          "Applied performance-focused bundle optimization",
+          "Delivered full inventory lifecycle management features",
+        ],
       },
     ],
-    image: trinity,
-    source_code_link: "/",
-    live_link: "https://toplineservices.in",
-    features:  [
-  "Next.js frontend optimized for SEO performance and fast client-side navigation",
-  "Django backend for managing dynamic content, service listings, and contact form submissions",
-  "Role-based access control with separate admin dashboards for managing services, blogs, and media content",
-  "Responsive and user-friendly design ensuring smooth experience across all devices using Tailwind CSS",
-  "Deployed on AWS EC2 with Nginx for high availability, scalability, and optimized performance"
-],
   },
   {
-    name: "Pixel Hub",
-    description:
-      " e-learning platform project for digital media course.This platform, powered by React and Python Django facilitates a smooth and engaging learning experience for users. It offers a user-friendly interface with features like course submission and admin approval allowing content creators to share their expertise while ensuring high-quality course offerings",
-    tags: [
-      {
-        name: "Python",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Django",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "RestApi",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "SweetAlert ",
-        color: "pink-text-gradient",
-      },
-      
-      {
-        name: "Tailwind",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Postgres",
-        color: "pink-text-gradient",
-      },
-      
-     {
-        name: "Stripe",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "AWS",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "Chanels",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Vercel",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "Route53",
-        color: "pink-text-gradient",
-      },
+    company: "Vedha Info-Systems",
+    role: "Junior Python Developer",
+    period: "Aug 2024 – Dec 2024",
+    summary:
+      "Joined as a junior developer and quickly moved into delivering production Django applications alongside cross-functional teams.",
+    points: [
+      "Collaborated with cross-functional teams to design, develop and deploy high-quality Django applications and RESTful APIs, following industry best practices for data protection",
+      "Developed and deployed 3+ production-ready web applications with Django REST Framework, PostgreSQL design and optimization, and responsive React.js and Material UI frontends",
+      "Implemented core features including user authentication, payment gateways and real-time updates",
     ],
-    image: runInStyle,
-    source_code_link: "/",
-    live_link: "/",
-    features: [
-      "email verification",
-      "Real time notification",
-      "chat with users and vendor",
-      "Secure Stripe payment gateway Integration",
-      "Animations",
-      "Change Password and reset password",
-      "Mobile responsive"
-     
-      
-    ],
+    stack: ["Django REST Framework", "PostgreSQL", "React.js", "Material UI"],
   },
-   {
-    name: "Hospitality",
-    description:
-    "AJP Hospitality is a comprehensive hospitality and guest service automation platform built using Django and React.js. The system streamlines hotel operations by integrating modules for room booking, chauffeur service, medical assistance, and food & beverage management, ensuring a seamless workflow between departments. The frontend, developed with React.js and Tailwind CSS, provides a fully responsive and customizable user experience across all devices. Secure online payments are enabled through Razorpay integration, allowing guests to make quick and reliable transactions for bookings and services. On the backend, PostgreSQL ensures robust data storage and optimized query performance. The platform also features role-based access control, offering dedicated dashboards for administrators, staff, and guests to enhance efficiency, data security, and user experience.",
-
-    tags: [
-      {
-        name: "React.js",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "RTK ",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Tailwind CSS",
-        color: "pink-text-gradient",
-      },
-      
-      
-      {
-        name: "Django",
-        color: "pink-text-gradient",
-      },
-        {
-        name: "Admin Dashboard",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Reactjs",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Docker",
-        color: "pink-text-gradient",
-      },
-      
-      
-      {
-        name: "SMTP",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: chitChat,
-    source_code_link: "/",
-    live_link: "https://hospitality.ajpgroup.com/",
-   features: [
-  "Developed modules for room booking, chauffeur service, medical assistance, and food & beverage management",
-  "Integrated Razorpay payment gateway for secure online transactions",
-  "Implemented role-based dashboards for admin, staff, and guests",
-  "Built a responsive frontend using React.js and Tailwind CSS",
-  "Optimized PostgreSQL database for high performance and reliability"
-],
-
-  },
- 
- 
-  {
-    name: "Netflix clone",
-    description:
-      "This is a post login Netflix clone. a React-based mini-project developed for learning purposes. In this exciting project, I've utilized data from the tmdb database to showcase a collection of movies. Explore the world of cinema right from this clone and enjoy the movie trailers of your favorite films!",
-    tags: [
-      {
-        name: "React.js",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Axios ",
-        color: "green-text-gradient",
-      },
-      {
-        name: "CSS",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "React YouTube",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "DOM",
-        color: "green-text-gradient",
-      },
-      {
-        name: "API",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: netflix,
-    source_code_link: "/",
-    live_link: "/",
-    features: [
-      "Used advaced CSS for styling",
-      "Used TMDB API for movie datas",
-      "Mobile responsive",
-    ],
-  },
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ];
 
-export { services, technologies, experiences, education,testimonials, projects };
+export const skillGroups = [
+  {
+    title: "Languages",
+    icon: "code",
+    items: ["Python", "JavaScript"],
+  },
+  {
+    title: "Frontend",
+    icon: "layout",
+    items: ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS", "Material UI"],
+  },
+  {
+    title: "Backend",
+    icon: "server",
+    items: ["Django", "Django REST Framework", "Node.js", "Express.js"],
+  },
+  {
+    title: "Databases",
+    icon: "database",
+    items: ["PostgreSQL", "MongoDB"],
+  },
+  {
+    title: "DevOps & Cloud",
+    icon: "cloud",
+    items: ["Docker", "AWS (EC2, S3)", "Nginx"],
+  },
+  {
+    title: "Web Technologies",
+    icon: "globe",
+    items: ["REST APIs", "WebSockets", "JWT Authentication"],
+  },
+  {
+    title: "AI Tools",
+    icon: "spark",
+    items: ["Claude AI", "Antigravity", "v0.dev", "AI Integration APIs"],
+  },
+  {
+    title: "Version Control",
+    icon: "branch",
+    items: ["Git", "GitHub"],
+  },
+];
+
+export const projects = [
+  {
+    name: "BIOGATE",
+    category: "Gym Management SaaS",
+    year: "Stackerbee Technologies",
+    description:
+      "A multi-tenant SaaS platform that lets gyms run memberships, class schedules and billing under their own brand.",
+    highlights: [
+      "Multi-tenant architecture supporting white-label deployments",
+      "Membership management, class scheduling and subscription billing",
+      "JWT authentication with role-based access control",
+    ],
+    stack: ["Django", "React.js", "PostgreSQL", "JWT"],
+    accent: ["#6d5efc", "#22d3ee"],
+  },
+  {
+    name: "AJP Hospitality",
+    category: "Hospitality & Guest Service Automation",
+    year: "Stackerbee Technologies",
+    description:
+      "A guest service platform that connects room booking, chauffeur, medical assistance and food & beverage into a single workflow.",
+    highlights: [
+      "Room booking, chauffeur, medical assistance and F&B modules",
+      "Separate dashboards for admin, staff and guests",
+      "Razorpay payments and optimized PostgreSQL queries",
+    ],
+    stack: ["Django", "React.js", "Tailwind CSS", "PostgreSQL", "Docker"],
+    accent: ["#f59e0b", "#ef4444"],
+  },
+  {
+    name: "AJP Automotive",
+    category: "Automotive Service & Vehicle Management",
+    year: "Stackerbee Technologies",
+    description:
+      "A full stack platform for dealerships and service centers covering vehicle listings, service jobs, inquiries and appointments.",
+    highlights: [
+      "Vehicle listings, service management and appointment scheduling",
+      "Role-based access for admin and staff",
+      "Handled domain setup and production server deployment",
+    ],
+    stack: ["React (Vite)", "Django REST Framework", "PostgreSQL", "Tailwind CSS"],
+    accent: ["#06b6d4", "#3b82f6"],
+  },
+  {
+    name: "Warehouse Management System",
+    category: "Inventory & Logistics",
+    year: "Stackerbee Technologies",
+    description:
+      "A complete WMS frontend built around reusable components and a lean, optimized bundle.",
+    highlights: [
+      "Component-based architecture for maximum reusability",
+      "Performance-focused bundle optimization",
+      "Full inventory lifecycle management",
+    ],
+    stack: ["React.js", "Vite"],
+    accent: ["#10b981", "#84cc16"],
+  },
+  {
+    name: "Topline Integrated Services",
+    category: "Business Solutions Platform",
+    year: "Independent project",
+    description:
+      "A corporate services website with an SEO-optimized Next.js frontend and a Django backend that powers all dynamic content.",
+    highlights: [
+      "Next.js frontend tuned for SEO and fast client-side navigation",
+      "Admin dashboards for services, blogs and media content",
+      "Deployed on AWS EC2 behind Nginx",
+    ],
+    stack: ["Next.js", "Django", "Tailwind CSS", "PostgreSQL", "AWS EC2", "Nginx"],
+    accent: ["#8b5cf6", "#ec4899"],
+  },
+  {
+    name: "Al-Dar Car Rental",
+    category: "Rental Operations Platform",
+    year: "Independent project",
+    description:
+      "A web platform to manage car inventory, bookings, expenses and income, with analytics for the business owner.",
+    highlights: [
+      "Admin dashboard for cars, expenses, income and analytics",
+      "Secure JWT authentication and authorization for admins and staff",
+      "AWS EC2 deployment with Nginx load balancing",
+    ],
+    stack: ["Django", "JWT", "AWS EC2", "Nginx"],
+    accent: ["#f97316", "#facc15"],
+  },
+  {
+    name: "Pixel-Hub",
+    category: "E-learning Platform",
+    year: "Independent project",
+    description:
+      "A digital media e-learning platform where creators submit courses and learners study, pay and chat in real time.",
+    highlights: [
+      "Stripe payment processing",
+      "Real-time chat using WebSockets",
+      "Deployed on AWS EC2 with tuned Nginx configuration",
+    ],
+    stack: ["Django", "React.js", "PostgreSQL", "Stripe", "WebSockets", "AWS EC2"],
+    accent: ["#a855f7", "#38bdf8"],
+  },
+];
+
+export const education = [
+  {
+    title: "Bachelor of Technology (BTech), Computer Science and Engineering",
+    institution: "APJ Abdul Kalam Technological University",
+    period: "2015 – 2019",
+    result: "CGPA 6.23",
+    mark: "B",
+  },
+  {
+    title: "Higher Secondary Education, Computer Science",
+    institution: "JNMGHSS Vadakara",
+    period: "2013 – 2015",
+    result: "87.75%",
+    mark: "H",
+  },
+];
